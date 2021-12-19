@@ -125,7 +125,7 @@ namespace Edu.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Teachers");
                 });
 #pragma warning restore 612, 618
         }

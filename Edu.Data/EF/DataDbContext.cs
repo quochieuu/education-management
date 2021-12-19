@@ -19,7 +19,7 @@ namespace Edu.Data.EF
         }
 
         public DbSet<Student> Students { get; set; }
-        public DbSet<Teacher> Categories { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Employee> Employees { get; set; }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Edu.Data.Migrations
 {
     [DbContext(typeof(DataDbContext))]
-    [Migration("20211219082449_InitialCreate")]
+    [Migration("20211219083028_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -127,7 +127,7 @@ namespace Edu.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Teachers");
                 });
 #pragma warning restore 612, 618
         }
