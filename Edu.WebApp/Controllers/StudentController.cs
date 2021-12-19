@@ -1,10 +1,12 @@
 ﻿using Edu.Data.EF;
 using Edu.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Edu.WebApp.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly DataDbContext _context;
