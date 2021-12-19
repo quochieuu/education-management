@@ -9,6 +9,12 @@
 <p>
     <a asp-action="Create">Thêm sinh viên mới</a>
 </p>
+<form asp-action="Index" class="form-inline" method="get">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" placeholder="Tìm kiếm sinh viên theo tên hoặc lớp" name="search">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2 mr-2">Filter</button>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -49,7 +55,13 @@
                 @Html.DisplayFor(modelItem => item.ClassName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Gender)
+                @if(item.Gender == 0) {
+                    <span>Nam</span>
+                } else if(item.Gender == 1) {
+                    <span>Nữ</span>
+                } else {
+                    <span></span>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Dob)
@@ -68,7 +80,6 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>

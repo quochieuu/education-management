@@ -13,9 +13,16 @@ namespace Edu.WebApp.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string search)
         {
-            return View(_context.Students.ToList());
+            var entity = _context.Students.ToList();
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                entity = _context.Students.Where(s => s.Name.Contains(search) || s.ClassName.Contains(search)).ToList();
+            }
+
+            return View(entity);
         }
 
         [HttpGet]
